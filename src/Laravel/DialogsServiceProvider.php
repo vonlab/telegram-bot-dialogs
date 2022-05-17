@@ -37,6 +37,16 @@ class DialogsServiceProvider extends ServiceProvider
     }
 
     /**
+     * @return void
+     */
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__.'/config/dialogs.php' => config_path('dialogs.php'),
+        ], 'config');
+    }
+
+    /**
      * Get the services provided by the provider.
      *
      * @return array
